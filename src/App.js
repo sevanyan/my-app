@@ -2,25 +2,32 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Iguan Systems <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const App = () => {
+    return (
+        <div>
+            <Header />
+            <Technologies />
+        </div>);
+}
+export default App;
+
+
+const Technologies = () => {
+    return ( <div>
+        <a href="#s">Home</a>
+        <a href="#s">News</a>
+        <a href="#s">Messeges</a>
     </div>
-  );
+    );
 }
 
-export default App;
+const Header = () => {
+    return ( <div>
+            <a href="#s">Home</a>
+            <a href="#s">News</a>
+            <a href="#s">Messeges</a>
+
+        </div>
+
+    );
+}
