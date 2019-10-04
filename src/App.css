@@ -112,10 +112,11 @@ a:-webkit-any-link {
 }
 body {
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  background: #7D1935;
   font-size: 14px;
   line-height: 1.42857143;
   color: #333;
-  background-color: #fff;
+
 }
 html, body {
   overflow-x: hidden;
