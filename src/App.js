@@ -1,16 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Technologies from "./Technologies";
-import Header from  './Header';
-import Footer from "./Footer";
+import Header from "src/components/Header";
+import Navbar from "src/components/Navbar";
+
 
 const App = () => {
     return (
         <div>
             <Header />
-            <Technologies />
-            <Footer />
+            <Navbar/>
         </div>);
 }
 export default App;
