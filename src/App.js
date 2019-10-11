@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
-import Header from "src/components/Header";
-import Navbar from "src/components/Navbar";
-import Profile from "src/components/Profile";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Profile from "./components/Profile";
 
 
 const App = () => {
@@ -11,7 +11,7 @@ const App = () => {
             <Header/>
             <Navbar/>
             <Profile/>
-            
+
         </div>);
 }
 export default App;

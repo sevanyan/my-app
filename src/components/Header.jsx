@@ -1,9 +1,9 @@
 import React from 'react';
-import './Header.css';
+import s from './Header.module.css';
 
 const Header = () => {
-    return <header className= 'header'>
-                <img src='https://i1.wp.com/sarakappler.com/wp-content/uploads/2018/05/logo-slack-png-300.png?fit=300%2C300&ssl=1'/>
+    return <header className= {s.header}>
+                <img src='http://iguansystems.com/image/logo/Iguan6-01.png'/>
            </header>
 
 }

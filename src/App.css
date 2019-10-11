@@ -8,19 +8,12 @@
           "h h "
           "n c";
 
-  grid-template-rows: 60px 1fr;
+  grid-template-rows: 80px 1fr;
   grid-template-columns: 2fr 10fr;
   /*grid-gap: 10px;*/
 }
 
-.nav{
-  grid-area: n;
-  background-color: burlywood;
-}
-.content{
-  grid-area: c;
-  background-color: cornflowerblue;
-}
+
 
 .header img{
   width:50px

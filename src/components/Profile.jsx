@@ -1,12 +1,30 @@
 import React from 'react';
-
+import s from './Profile.module.css';
 
 const Profile = () => {
     return(
-        <div className='content'>
+        <div className={s.content}>
             <div>
-                <img src = 'https://i1.wp.com/sarakappler.com/wp-content/uploads/2018/05/logo-slack-png-300.png?fit=300%2C300&ssl=1' />
+
+                <img src = 'https://i0.wp.com/www.peopleofar.com/wp-content/uploads/tatev-monastery-armenia.jpg' />
             </div>
+            <div>
+                ava + description
+            </div>
+            <div>
+                My Posts
+                <div>
+                    New Post
+                </div>
+                <div className={s.posts}>
+                <div className={s.item}>
+                    Post 1
+                </div>
+                <div className={s.item}>
+                    Post 2
+                </div>
+            </div>
+          </div>
         </div>
     );
 }
