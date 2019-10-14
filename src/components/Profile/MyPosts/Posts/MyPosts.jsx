@@ -6,7 +6,9 @@ const MyPosts = () => {
             <div>
                 My Posts
                 <div>
-                    New Post
+                    <textarea></textarea>
+                    <button>Add post</button>
+                    <button>Remove post</button>
                 </div>
                 <div className={s.posts}>
                 <div className={s.item}>

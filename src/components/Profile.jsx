@@ -1,30 +1,18 @@
 import React from 'react';
 import s from './Profile.module.css';
+import MyPosts from "src/components/Profile/MyPosts/Posts/MyPosts";
 
 const Profile = () => {
     return(
         <div className={s.content}>
             <div>
 
-                <img src = 'https://i0.wp.com/www.peopleofar.com/wp-content/uploads/tatev-monastery-armenia.jpg' alt={'profileImage'}/>
+                <img src = 'https://www.rakacreative.com/wp-content/uploads/2017/01/Raka-Blog-social-media-sizes-1480x550.png' alt={'profileImage'}/>
             </div>
             <div>
                 ava + description
             </div>
-            <div>
-                My Posts
-                <div>
-                    New Post
-                </div>
-                <div className={s.posts}>
-                <div className={s.item}>
-                    Post 1
-                </div>
-                <div className={s.item}>
-                    Post 2
-                </div>
-            </div>
-          </div>
+            <MyPosts/>
         </div>
     );
 }
