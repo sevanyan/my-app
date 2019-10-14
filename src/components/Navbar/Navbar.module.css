@@ -1,6 +1,8 @@
 .nav{
     grid-area: n;
-    background-color: burlywood;
+    background-color: #001a00;
+    text-align: -moz-left;
+
 }
 .item {
     color: white;
