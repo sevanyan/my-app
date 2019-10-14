@@ -6,7 +6,7 @@ const Profile = () => {
         <div className={s.content}>
             <div>
 
-                <img src = 'https://i0.wp.com/www.peopleofar.com/wp-content/uploads/tatev-monastery-armenia.jpg' />
+                <img src = 'https://i0.wp.com/www.peopleofar.com/wp-content/uploads/tatev-monastery-armenia.jpg' alt={'profileImage'}/>
             </div>
             <div>
                 ava + description

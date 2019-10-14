@@ -5,12 +5,19 @@ import s from './Navbar.module.css';
 //     'nav': 'Navbar_nav__3VT01',
 //     'item': 'Navbar_item__1Raqz'
 // }
+// let c1= "item";
+// let c2 = "active";
+//
+// let classesNew = `${s.item} ${s.active}`;
+//
+
+
 const Navbar=() =>{
     return( <nav className ={s.nav}>
             <div className={s.item}>
                 <a>Profile</a>
             </div>
-            <div className={s.item}>
+            <div className={`${s.item} ${s.active}`}>
                 <a>Messeges</a>
             </div>
             <div className={s.item}>
