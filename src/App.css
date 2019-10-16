@@ -18,3 +18,9 @@
 .header img {
   width: 50px
 }
+.app-wrapper-content{
+  grid-area: c;
+  background-color: cornflowerblue;
+  display: inherit;
+
+}
