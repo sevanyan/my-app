@@ -13,8 +13,8 @@ import {NavLink} from "react-router-dom";
 //
 
 
-const Navbar=() =>{
-    return( <nav className ={s.nav}>
+const Navbar = () => {
+    return (<nav className={s.nav}>
             <div className={s.item}>
                 <NavLink to="/profile" activeClassName={s.activeLink}>Profile</NavLink>
             </div>
@@ -22,7 +22,7 @@ const Navbar=() =>{
                 <a>Messeges</a>
             </div>
             <div className={s.item}>
-                <NavLink to= '/news' activeClassName={s.activeLink}>News</NavLink>
+                <NavLink to='/news' activeClassName={s.activeLink}>News</NavLink>
             </div>
             <div className={s.item}>
                 <NavLink to='/music' activeClassName={s.activeLink}>Music</NavLink>
@@ -33,4 +33,4 @@ const Navbar=() =>{
         </nav>
     );
 }
-export default Navbar ;
+export default Navbar;
