@@ -2,10 +2,12 @@ import React from 'react';
 import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
+
 const Myposts = (props) => {
 
+    let postsElements = props.posts
 
-    let postsElements = props.posts.map(p => <Post message={p.message} likescount ={p.likesCount}/>)
+        .map(p => <Post message={p.message} likescount ={p.likesCount}/>);
 
     return (
         <div className={s.postsBlock}>
@@ -20,11 +22,6 @@ const Myposts = (props) => {
                 <button>Remove post</button>
             </div>
             <div className={s.posts}>
-
-
-
-
-
 
                 {postsElements}
             </div>
