@@ -3,21 +3,36 @@ import s from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 
-const Myposts = (props) => {
+const MyPosts = (props) => {
 
     let postsElements = props.posts
 
-        .map(p => <Post message={p.message} likescount ={p.likesCount}/>);
+        .map(p => <Post message={p.message} likescount={p.likesCount}/>);
+
+    let newPostElement = React.createRef();
+
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+    }
+
+    let onPostChange = () => {
+        let text = newPostElement.current.value;
+        props.updateNewPostText(text);
+    }
 
     return (
         <div className={s.postsBlock}>
             <h3>My Posts</h3>
             <div>
                 <div>
-                    <textarea>Write some post here...</textarea>
+                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText}/>
                 </div>
                 <div>
-                    <button>Add post</button>
+                    <button onClick={addPost
+                    }>Add post
+                    </button>
                 </div>
                 <button>Remove post</button>
             </div>
@@ -28,4 +43,4 @@ const Myposts = (props) => {
         </div>
     );
 }
-export default Myposts;
+export default MyPosts;
