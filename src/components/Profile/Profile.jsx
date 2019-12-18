@@ -1,18 +1,20 @@
 import React from 'react';
-import MyPosts from "./MyPosts/MyPosts";
 import ProfileInfo from "./ProfileInfo/ProfileInfo";
-import {addPostActionCreator,updateNewPostTextActionCreator} from"../../redux/profile-reducer";
+import MyPostsContainer from "./MyPosts/MyPostsContainer";
+
 
 const Profile = (props) => {
-   const posts =  props.store.getState().profilePage.posts;
-    return(
+    // const posts =  props.store.getState().profilePage.posts;
+    return (
         <div>
-
             <ProfileInfo/>
-            <MyPosts posts = {posts}
-                     newPostText = {props.profilePage.newPostText}
-                     dispatch = {props.dispatch} />
+            <MyPostsContainer/>
         </div>
     );
 }
 export default Profile;
+
+//
+// posts = {props.profilePage.posts}
+// newPostText = {props.profilePage.newPostText}
+// dispatch = {props.dispatch}

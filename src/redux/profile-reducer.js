@@ -1,5 +1,5 @@
-export const ADD_POST = 'ADD-POST';
-export const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT';
 
 let initialState = {
     posts: [
@@ -10,8 +10,8 @@ let initialState = {
 };
 
 
-const profileReducer = (state = initialState, action) => {
-debugger;
+export const profileReducer = (state = initialState, action) => {
+
     switch (action.type) {
         case ADD_POST:
             let newPost = {
@@ -31,6 +31,7 @@ debugger;
             return state;
         }
     }
+
 }
 
 
