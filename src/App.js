@@ -11,10 +11,9 @@ import Friends from './components/Friends/Friends';
 import DialogsContainer from "./components/Dialogs/DialogsContainer";
 
 
-const App = (props) => {
+const App = () => {
     return (
 
-        <BrowserRouter>
             <div className='app-wrapper'>
                 <Header/>
                 <Navbar/>
@@ -36,7 +35,6 @@ const App = (props) => {
                            render={() => <Friends/>}/>
                 </div>
             </div>
-        </BrowserRouter>
     )
 }
 export default App;
