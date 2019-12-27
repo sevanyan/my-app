@@ -23,7 +23,7 @@ const App = () => {
 
 
                     <Route path='/profile'
-                           render={() => <Profile /> }/>
+                           render={() => <Profile  /> }/>
 
                     <Route path='/news'
                            render={() => <News/>}/>
