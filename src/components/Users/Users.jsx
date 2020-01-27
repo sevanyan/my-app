@@ -15,7 +15,7 @@ export default class Users extends React.Component {
 
     render() {
 
-        let pagesCount = Math.ceil( this.props.totalUsersCount / this.props.pageSize);
+        let pagesCount = Math.ceil(this.props.totalUsersCount / this.props.pageSize);
         let pages = [];
         for (var i = 1; i <= pagesCount; i++) {
             pages.push(i);
@@ -24,7 +24,9 @@ export default class Users extends React.Component {
             <div>
                 {pages.map(p => {
                     return <span className={this.props.currentPage === p && styles.selectedPage}
-                                 onClick={()=>{this.props.setCurrentPage(p)}}> {p}</span>
+                                 onClick={() => {
+                                     this.props.setCurrentPage(p)
+                                 }}> {p}</span>
                 })}
             </div>
 
@@ -62,3 +64,5 @@ export default class Users extends React.Component {
 
     }
 }
+
+   // https://www.youtube.com/watch?v=ap8HxJPwJhY&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=56
