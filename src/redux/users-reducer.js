@@ -6,18 +6,17 @@ const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
 let initialState = {
     users: [],
     pageSize:5,
-    totalUsersCount: 19,
-    currentPage: 4
+    totalUsersCount: 54,
+    currentPage: 1
+
 };
 
 export const usersReducer = (state = initialState, action) => {
 
     switch (action.type) {
-        case SET_USERS: {
-            return {
-                ...state, users: [...action.users]
 
-            }
+        case SET_USERS: {
+            return {   ...state, users: action.users }
         }
         case FOLLOW:
             return {

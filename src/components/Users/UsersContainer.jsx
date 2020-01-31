@@ -21,11 +21,11 @@ let mapDispatchToProps = (dispatch) => {
         unfollow: (userId) => {
             dispatch(unfollowAC(userId));
         },
-        setUsers: (users) => {
+        setUsers:(users)=> {
             dispatch(setUsersAC(users));
         },
         setCurrentPage: (pageNumber) => {
-            dispatch: (setCurrentPageAC(pageNumber));
+            dispatch (setCurrentPageAC(pageNumber));
         }
     }
 }
