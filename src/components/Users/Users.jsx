@@ -4,7 +4,7 @@ import * as axios from "axios";
 import userPhoto from '../../assets/images/download.png'
 
 
-export default class Users extends React.Component {
+ class Users extends React.Component {
     componentDidMount() {
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count = ${this.props.pageSize} `)
             .then(response => {
@@ -12,17 +12,13 @@ export default class Users extends React.Component {
             });
     }
     onPageChanged = (pageNumber) => {
-
-        console.log(pageNumber);
-
         this.props.setCurrentPage(pageNumber);
         axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count = ${this.props.pageSize} `)
             .then(response => {
                 this.props.setUsers(response.data.items);
-
-                this.props.setTotalUsersCount(response.data.items);
-            });
+            })
     }
+
 
     render() {
 
@@ -33,11 +29,12 @@ export default class Users extends React.Component {
         }
         return <div>
             <div>
-                {pages.map( p => {
+                {pages.map(p => {
                     return <span className={this.props.currentPage === p && styles.selectedPage}
                                  onClick={(e) => {
-                                     this.props.setCurrentPage(p)
-                                 }}> {p}</span>
+                                     this.onPageChanged(p);
+                                 }}> {p }
+                    </span>
                 })}
             </div>
 
@@ -75,5 +72,5 @@ export default class Users extends React.Component {
 
     }
 }
-
+export default Users;
    // https://www.youtube.com/watch?v=ap8HxJPwJhY&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8&index=56
