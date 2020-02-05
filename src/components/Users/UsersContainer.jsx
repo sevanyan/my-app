@@ -26,20 +26,23 @@ class UsersContainer extends React.Component {
                 this.props.toggleIsFetching(false);
 
             })
-    }
+    };
 
     render() {
         return <>
-            {this.props.isFetching? <img src={preloader} /> : null}
-            <Users totalUsersCount={this.props.totalUsersCount}
-                      pageSize={this.props.pageSize}
+            {this.props.isFetching?
+                <div>
+                    <img src={preloader} style={{backroundColor: 'white'} }/> : null}
+                </div>
+            <Users
+                pageSize={this.props.pageSize}
                       currentPage={this.props.currentPage}
                       onPageChanged={this.onPageChanged}
                       users={this.props.users}
                       follow={this.props.follow}
                       unfollow={this.props.unfollow}
         />
-</>
+</div>
     }
 }
 
@@ -54,7 +57,7 @@ let mapStateToProps = (state) => {
 
 
     }
-}
+};
 
 let mapDispatchToProps = (dispatch) => {
     return {
@@ -77,7 +80,7 @@ let mapDispatchToProps = (dispatch) => {
             dispatch(setUsersTotalCountAC(totalCount));
         }
     }
-}
+};
 
 
 
