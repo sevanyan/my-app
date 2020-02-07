@@ -7,7 +7,7 @@ const Profile = (props) => {
     // const posts =  props.store.getState().profilePage.posts;
     return (
         <div>
-            <ProfileInfo/>
+            <ProfileInfo profile={props.profile}/>
             <MyPostsContainer store = {props.store}/>
         </div>
     );
