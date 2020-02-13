@@ -15,7 +15,7 @@ const ProfileInfo = (props) => {
                 alt='profileImage'/>
             <div className={s.descriptionBlock}>
                <img src={props.profile.photos.large}/>
-                Avatar and Description
+          <br/>      Avatar and Description
             </div>
         </div>
     );
