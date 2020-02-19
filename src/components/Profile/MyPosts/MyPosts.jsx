@@ -23,7 +23,7 @@ const MyPosts = (props) => {
     };
 
     return (
-        <div className={s.postsBlock}>
+        <div className={s.postsBlock} >
             <h3>My Posts</h3>
             <div>
                 <div>
