@@ -4,7 +4,7 @@ let initialState = {
     id: null,
     email: null,
     login: null,
-    isFetching: true
+    isAuth: true
 
 };
 
