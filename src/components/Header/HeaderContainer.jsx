@@ -29,4 +29,4 @@ class HeaderContainer extends React.Component {
     }
 }
 const mapStateToProps = (state) => ({});
-export default connect(mapStateToProps,setAuthUserData )(HeaderContainer);
+export default connect(mapStateToProps,{setAuthUserData} )(HeaderContainer);
