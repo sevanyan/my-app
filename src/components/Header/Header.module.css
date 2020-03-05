@@ -1,15 +1,19 @@
 .header{
     grid-area: h;
-    background-color: #C06C84;
+    background-color: #283e4a;
     display: inherit;
 }
 .header img{
     width:80px;
-
 }
 .loginBlock {
  text-align:right;
+    color: #6BBF45;
+
 }
 .loginBlock a {
-    color: #1a0000;
+
 }
+
+/*#6BBF45*/
+/*#283e4a*/
