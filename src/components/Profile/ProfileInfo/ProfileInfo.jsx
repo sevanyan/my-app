@@ -4,18 +4,23 @@ import Preloader from "../../../Common/Preloader/preloader";
 
 
 const ProfileInfo = (props) => {
+    console.log(props);
+
     if (!props.profile) {
+
         return <Preloader/>
     }
     return (
 
         <div>
-                      <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large} alt={"ProfileImage"}/>
-                <dev><br/> {props.profile.fullName}
-                </dev>
-                <dev><br/> {}
-                </dev>
+            <div className={s.descriptionBlock}>
+
+                <img src=  {props.profile.photos.large}   alt={"ProfileImage"}/>
+
+                <div><br/> {props.profile.fullName}
+                </div>
+                <div><br/> {}
+                </div>
 
                 <ul>
                     <li>github:</li>

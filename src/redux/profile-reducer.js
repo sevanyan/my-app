@@ -9,7 +9,6 @@ let initialState = {
     ],
     newPostText: 'It-kamasutra.com',
     profile:null
-
 };
 
 
