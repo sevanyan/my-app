@@ -37,24 +37,42 @@ let Users = (props) => {
                             </div>
                         <div>
                         {u.followed
-                            ? <button onClick={() =>{
+                            ? <button onClick={() => {
 
-                                props.unfollow(u.id);
+                                axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
+                                  withCredentials: true,
+                                    headers: {
+                                      "API-KEY" : "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
+                                    }
+                              })
+                                    .then(response => {
+                                        if (response.data.resultCode === 0) {
+                                            props.unfollow(u.id);
+                                        }
+                                    });
+
 
                             }}>Unfollow</button>
                             : <button onClick={() => {
 
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}` , {},{withCredentials:true})
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}` , {},{
+                                    withCredentials:true,
+                                   headers : {
+                                       "API-KEY" : "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
+                                   }
+                                })
                                     .then(response => {
-                                        if(response.data.resultCode === 0)
-                                        this.props.setUsersTotalCount(response.data.totalCount);
-                                        this.props.setUsers(response.data.items);
+                                        if (response.data.resultCode === 0)
+                                        {
+                                            console.log('unfollow');
+                                        }
                                     });
 
                                 props.follow(u.id)
 
                             }}>Follow</button>
                         }
+
 
                         </div>
                         </span>
