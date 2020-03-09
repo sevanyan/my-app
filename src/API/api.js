@@ -1,8 +1,17 @@
 import * as axios from "axios";
-export const getUsers = ()=>{
-    return
-axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count = ${this.props.pageSize}`,
+
+export const getUsers = (currentPage = 1 ,pageSize = 0) => {
+    return axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${currentPage}&count = ${pageSize}`,
     {
-        withcridentials: true
+        withCredentials: true
     })
 }
+
+
+export const  pageChanger = (pageNumber = 1 , pageSize= 0) => {
+    axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${pageNumber}&count = ${pageSize} `,
+        {
+            withCredentials: true
+        })
+}
+
