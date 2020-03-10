@@ -12,11 +12,11 @@ let Users = (props) => {
         pages.push(i);
     }
 
-    return <div>
+    return <div key={'users'}>
 
-        <div>
-            {pages.map(p => {
-                return <span className={props.currentPage === p && styles.selectedPage}
+        <div key={'currentPage'}>
+            {pages.map((p, index) => {
+                return <span className={props.currentPage === p && styles.selectedPage} key={index}
                              onClick={(e) => {
                                  props.onPageChanged(p);
                              }}> {p}

@@ -12,7 +12,6 @@ import {getUsers,pageChanger} from "../../API/api";
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        console.log(this.props + 'pageChanger' + pageChanger);
         this.props.toggleIsFetching(true);
 
 
