@@ -8,20 +8,15 @@ import Preloader from "../../Common/Preloader/preloader";
 import {getUsers,pageChanger} from "../../API/api";
 
 
-
 class UsersContainer extends React.Component {
-
     componentDidMount() {
         this.props.toggleIsFetching(true);
-
-
         getUsers(this.props.currentPage, this.props.pageSize).then(response => {
             this.props.toggleIsFetching(false);
             this.props.setUsersTotalCount(response.data.totalCount);
             this.props.setUsers(response.data.items);
         });
     }
-
     onPageChanged = (pageNumber) => {
         this.props.setCurrentPage(pageNumber);
         this.props.toggleIsFetching(true);
@@ -29,10 +24,8 @@ class UsersContainer extends React.Component {
             .then(response => {
                 this.props.setUsers(response.data.items);
                 this.props.toggleIsFetching(false);
-
             })
     };
-
     render() {
         return <>
             {this.props.isFetching ? <Preloader/> : null}
@@ -44,12 +37,10 @@ class UsersContainer extends React.Component {
                    users={this.props.users}
                    follow={this.props.follow}
                    unfollow={this.props.unfollow}
-
             />
         </>
     }
 }
-
 let mapStateToProps = (state) => {
     return {
         users: state.usersPage.users,
@@ -58,11 +49,8 @@ let mapStateToProps = (state) => {
         currentPage: state.usersPage.currentPage,
         isFetching: state.usersPage.isFetching,
         totalcount: state.usersPage.totalcount
-
-
     }
 }
-
 export default connect(mapStateToProps,
     {
         follow, unfollow, setUsers,
