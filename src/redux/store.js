@@ -29,7 +29,6 @@ let store = {
                 {id: 6, name: 'Seroj'}],
 
             newMessageBody: ""
-
         },
         sidebar: {}
     },
@@ -58,19 +57,15 @@ let store = {
     updateNewPostText(newText) {
         this._state.profilePage.newPostText = (newText);
         this._callSubscriber(this._state);
-
     },
     dispatch(action) {  //{ type:  'ADD-POST'}
         this._state.profilePage = profileReducer(this._state.profilePage, action)
         this._state.dialogsPage = dialogsReducer(this._state.dialogsPage, action)
         this._state.sidebar = sidebarReducer(this._state.sidebar, action)
-
         this._callSubscriber(this._state);
     }
 
 }
-
-
 
 export default store;
 window.store = store;
