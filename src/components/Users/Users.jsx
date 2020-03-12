@@ -14,7 +14,7 @@ let Users = (props) => {
     return <div key={'users'}>
         <div key={'currentPage'}>
             {pages.map((p, index) => {
-                return <span className={props.currentPage === p && styles.selectedPage} key={index}
+                return <span  className={props.currentPage === p && styles.selectedPage} key={index}
                              onClick={(e) => {
                                  props.onPageChanged(p);
                              }}> {p}
@@ -34,26 +34,24 @@ let Users = (props) => {
                     </div>
                         <div>
                         {u.followed
-                            ? <button disabled={props.followingInProgress} onClick={() => {
+                            ? <button disabled={props.followingInProgress.some(id => id=== u.id)} onClick={() => {
                                 props.toggleFollowingInProgress(true);
                                 unfollowUser(u.id)
                                     .then(response => {
                                         if (response.data.resultCode === 0) {
-                                            props.unfollow(u.id);
                                             console.log('follow');
-
                                         }
+                                        props.unfollow(u.id);
                                         props.toggleFollowingInProgress(false)
-
                                     });
 
                             }}>Unfollow</button>
-                            : <button disabled={props.followingInProgress} onClick={() => {
+                            : <button disabled={props.followingInProgress.some(id => id=== u.id)} onClick={() => {
                                 props.toggleFollowingInProgress(true);
                                 followUser(u.id,[],{})
                                     .then(response => {
                                         if (response.data.resultCode === 0) {
-                                            console.log('follow');
+                                            console.log('unfollow');
                                         }
                                         props.toggleFollowingInProgress(false)
 
