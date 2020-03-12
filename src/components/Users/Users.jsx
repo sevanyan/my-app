@@ -30,8 +30,9 @@ let Users = (props) => {
 
                 <span>
                         <div>
-                            <NavLink to ={'/profile/' + u.id}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto} className={styles.usersPhoto} alt={"A"}/>
+                            <NavLink to={'/profile/' + u.id}>
+                                <img src={u.photos.small != null ? u.photos.small : userPhoto}
+                                     className={styles.usersPhoto} alt={"A"}/>
 
                             </NavLink>
                             </div>
@@ -40,11 +41,11 @@ let Users = (props) => {
                             ? <button onClick={() => {
 
                                 axios.delete(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {
-                                  withCredentials: true,
+                                    withCredentials: true,
                                     headers: {
-                                      "API-KEY" : "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
+                                        "API-KEY": "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
                                     }
-                              })
+                                })
                                     .then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.unfollow(u.id);
@@ -55,15 +56,14 @@ let Users = (props) => {
                             }}>Unfollow</button>
                             : <button onClick={() => {
 
-                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}` , {},{
-                                    withCredentials:true,
-                                   headers : {
-                                       "API-KEY" : "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
-                                   }
+                                axios.post(`https://social-network.samuraijs.com/api/1.0/follow/${u.id}`, {}, {
+                                    withCredentials: true,
+                                    headers: {
+                                        "API-KEY": "2094cee2-a415-494f-a1bb-1f40e1be7cf3"
+                                    }
                                 })
                                     .then(response => {
-                                        if (response.data.resultCode === 0)
-                                        {
+                                        if (response.data.resultCode === 0) {
                                             console.log('unfollow');
                                         }
                                     });
@@ -72,6 +72,7 @@ let Users = (props) => {
 
                             }}>Follow</button>
                         }
+
 
 
                         </div>
