@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./users.module.css";
 import userPhoto from '../../assets/images/download.png'
 import {NavLink} from "react-router-dom";
-import {unfollowUser,followUser} from "../../API/api";
+import {unfollowUser, followUser} from "../../API/api";
 
 
 let Users = (props) => {
@@ -18,7 +18,7 @@ let Users = (props) => {
                              onClick={(e) => {
                                  props.onPageChanged(p);
                              }}> {p}
-                    </span>
+                        </span>
             })}
         </div>
         {
@@ -34,23 +34,32 @@ let Users = (props) => {
                     </div>
                         <div>
                         {u.followed
-                            ? <button onClick={() => {
-
-                                followUser(u.id)
+                            ? <button disabled={props.followingInProgress} onClick={() => {
+                                props.toggleFollowingInProgress(true);
+                                unfollowUser(u.id)
                                     .then(response => {
                                         if (response.data.resultCode === 0) {
                                             props.unfollow(u.id);
+                                            console.log('follow');
+
                                         }
+                                        props.toggleFollowingInProgress(false)
+
                                     });
+
                             }}>Unfollow</button>
-                            : <button onClick={() => {
-                                unfollowUser(u.id, {})
+                            : <button disabled={props.followingInProgress} onClick={() => {
+                                props.toggleFollowingInProgress(true);
+                                followUser(u.id,[],{})
                                     .then(response => {
                                         if (response.data.resultCode === 0) {
-                                            console.log('unfollow');
+                                            console.log('follow');
                                         }
+                                        props.toggleFollowingInProgress(false)
+
                                     });
                                 props.follow(u.id)
+
                             }}>Follow</button>
                         }
                         </div>

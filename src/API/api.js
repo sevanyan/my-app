@@ -18,11 +18,11 @@ export const pageChanger = (pageNumber = 1, pageSize = 0) => {
 }
 
 export const followUser = (uuid) => {
-    return intance.get(`follow/${uuid}`);
+    return intance.get(`followed/${uuid}`);
 }
 
-export const unfollowUser = (uuid, data = {}) => {
-    return intance.post(`follow/${uuid}`, data);
+export const unfollowUser = (uuid, message =[], data = {}) => {
+    return intance.delete(`followed/${uuid}`, data);
 }
 
 
